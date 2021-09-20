@@ -4,7 +4,8 @@ const rndmKillerBtn = document.getElementById("rndm-killer-button");
 const survivorPerkBtn = document.getElementById("rndm-survivor-perks-button");
 
 // URL
-const baseUrl = "http://localhost:4000";
+// const baseUrl = "http://localhost:4000";
+const baseUrl = "https://project-week8.herokuapp.com/"
 
 // functions
 const catchErr = (err) => console.log(err);
