@@ -165,14 +165,19 @@ const randomSurvivor = () => {
     .catch(catchErr);
 };
 
-const bugSubmit = () => {
-
-}
-
+const bugSubmit = (e, body) => {
+  e.preventDefault();
+  axios
+    .post(baseUrl, body)
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch(catchErr);
+};
 
 // Listeners
 killerPerkBtn.addEventListener("click", randomKillerPerks);
 rndmKillerBtn.addEventListener("click", randomKiller);
 survivorPerkBtn.addEventListener("click", randomSurvivorPerks);
 survivorBtn.addEventListener("click", randomSurvivor);
-submitBtn.addEventListener()
+bugForm.addEventListener("submit", bugSubmit);
