@@ -6,7 +6,6 @@ const survivorBtn = document.getElementById("rndm-survivor-button");
 const bugForm = document.getElementById("bug-form");
 
 // URL
-// const baseUrl = "http://localhost:4000";
 const baseUrl = "https://project-week8.herokuapp.com";
 
 // functions
@@ -18,7 +17,6 @@ const randomKillerPerks = () => {
     .get(`${baseUrl}/rkillerperks`)
     .then((res) => {
       const perks = res.data;
-      // This makes sure you can't get 2 of the same perk
       const randomIndex = () => {
         let randomNum = Math.floor(Math.random() * perks.length);
         for (let i = 0; i < 100; i++) {
@@ -154,12 +152,12 @@ const randomSurvivor = () => {
       document.getElementById(
         "survivor-wrapper"
       ).innerHTML = `<div id="random-survivor">
-        <img src="${randomSurvivor.icon.shop_background}" id="survivor-img"></img>
         <div>
-            <h2>${randomSurvivor.name}</h2>
-            <br>
-            <p>${randomSurvivor.overview}</p>
+          <h2>${randomSurvivor.name}</h2>
+          <br>
+          <p>${randomSurvivor.overview}</p>
         </div>
+        <img src="${randomSurvivor.icon.shop_background}" id="survivor-img"></img>
       </div>`;
     })
     .catch(catchErr);
@@ -168,13 +166,19 @@ const randomSurvivor = () => {
 const bugSubmit = (e) => {
   e.preventDefault();
 
-  let body = document.getElementById("bug-input").textContent
+  let body = document.querySelector("#bug-input");
+
+  let newObj = {
+    body: body.value
+  }
+
   axios
-    .post(baseUrl, body)
+    .post(baseUrl, newObj)
     .then((res) => {
       console.log(res.data);
     })
     .catch(catchErr);
+  body.value = "";
 };
 
 // Listeners

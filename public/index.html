@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- <embed src="https://www.youtube.com/watch?v=x0VYK5m9fjc" autostart="true" loop="false" hidden="true" width="0" height="0"> -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css" />
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <title>Dbd Random</title>
   </head>
   <body class="container" id="background">
-    <!-- <div id="layer"></div> -->
     <header class="container">
       <h1 id="title">Dead By Daylight Randomized</h1>
     </header>
 
     <div class="section">
-      <button id="rndm-killer-perks-button">Get Random Killer Perks</button>
+      <button id="rndm-killer-perks-button" class="button">Get Random Killer Perks</button>
       <div id="killer-perks-wrapper">
         <p>
           Get 4 randomly selected perks from all killers (excluding perks from
@@ -26,7 +23,7 @@
     </div>
 
     <div class="section">
-      <button id="rndm-killer-button">Get a Random Killer</button>
+      <button id="rndm-killer-button" class="button">Get a Random Killer</button>
       <div id="killer-wrapper">
         <p>
           Get a randomly selected Killer (excluding Trickster, Nemesis, and
@@ -36,7 +33,7 @@
     </div>
 
     <div class="section">
-      <button id="rndm-survivor-perks-button">Get Random Survivor Perks</button>
+      <button id="rndm-survivor-perks-button" class="button">Get Random Survivor Perks</button>
       <div id="survivor-perks-wrapper">
         <p>
           Get 4 randomly selected perks from the survivor library (excluding
@@ -46,7 +43,7 @@
     </div>
 
     <div class="section">
-      <button id="rndm-survivor-button">Get a Random Survivor</button>
+      <button id="rndm-survivor-button" class="button">Get a Random Survivor</button>
       <div id="survivor-wrapper">
         <p>
           Get a randomly selected Survivor (excluding Yun-Jin Lee, Jill
@@ -58,12 +55,11 @@
     <form class="section" id="bug-form">
       <label for="big-input"><h2>Found a Bug? Leave it here!</h2></label>
       <br>
-      <input type="text" placeholder="How to replicate bug(s)" name="bug-input" id="bug-input">
+      <input type="text" placeholder="How to replicate bug(s)" name="bug-input" id="bug-input" autocomplete="off">
       <br>
-      <input type="submit" id="submit-button" ></input>
+      <input type="submit" id="submit-button" class="button"></input>
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="/js"></script>
-    <!-- <script src="index.js"></script> -->
   </body>
 </html>
