@@ -1,3 +1,5 @@
+const bugReports = [];
+
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
@@ -56,6 +58,12 @@ app.get("/rsurvivor", (req, res) => {
     })
     .catch(catchErr);
 });
+
+app.post("/", (req, res) => {
+  const { body } = req.body
+  bugReports.push(body);
+  console.log(bugReports);
+})
 
 const port = process.env.PORT || 4000;
 

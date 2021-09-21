@@ -3,6 +3,7 @@ const killerPerkBtn = document.getElementById("rndm-killer-perks-button");
 const rndmKillerBtn = document.getElementById("rndm-killer-button");
 const survivorPerkBtn = document.getElementById("rndm-survivor-perks-button");
 const survivorBtn = document.getElementById("rndm-survivor-button");
+const bugForm = document.getElementById("bug-form");
 
 // URL
 // const baseUrl = "http://localhost:4000";
@@ -164,8 +165,14 @@ const randomSurvivor = () => {
     .catch(catchErr);
 };
 
+const bugSubmit = () => {
+
+}
+
+
 // Listeners
 killerPerkBtn.addEventListener("click", randomKillerPerks);
 rndmKillerBtn.addEventListener("click", randomKiller);
 survivorPerkBtn.addEventListener("click", randomSurvivorPerks);
 survivorBtn.addEventListener("click", randomSurvivor);
+submitBtn.addEventListener()
