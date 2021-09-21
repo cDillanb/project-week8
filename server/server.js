@@ -62,7 +62,8 @@ app.get("/rsurvivor", (req, res) => {
 app.post("/", (req, res) => {
   const { body } = req.body
   bugReports.push(body);
-  console.log(bugReports);
+  res.sendStatus(200);
+  // console.log(bugReports);
 })
 
 const port = process.env.PORT || 4000;
