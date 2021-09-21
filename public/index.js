@@ -174,9 +174,7 @@ const bugSubmit = (e) => {
 
   axios
     .post(baseUrl, newObj)
-    .then((res) => {
-      console.log(res.data);
-    })
+    .then()
     .catch(catchErr);
   body.value = "";
 };
