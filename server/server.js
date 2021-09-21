@@ -60,7 +60,7 @@ app.get("/rsurvivor", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  const { body } = req.body
+  const body = req.body
   bugReports.push(body);
   res.status(200).send(bugReports);
   // console.log(bugReports);
