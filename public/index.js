@@ -168,7 +168,7 @@ const randomSurvivor = () => {
 const bugSubmit = (e) => {
   e.preventDefault();
 
-  let body = document.getElementById("bug-input")
+  let body = document.getElementById("bug-input").textContent
   axios
     .post(baseUrl, body)
     .then((res) => {
