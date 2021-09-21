@@ -165,8 +165,10 @@ const randomSurvivor = () => {
     .catch(catchErr);
 };
 
-const bugSubmit = (e, body) => {
+const bugSubmit = (e) => {
   e.preventDefault();
+
+  let body = document.getElementById("bug-input")
   axios
     .post(baseUrl, body)
     .then((res) => {
