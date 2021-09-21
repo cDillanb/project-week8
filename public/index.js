@@ -34,28 +34,28 @@ const randomKillerPerks = () => {
       let perk4 = perks[randomIndex()];
       document.getElementById(
         "killer-perks-wrapper"
-      ).innerHTML = `<div id="perk1" class="random-perk">
+      ).innerHTML = `<div id="perk1" class="random-kperk">
           <img src="${perk1.icon}"></img>
           <div>
             <h2>${perk1.perk_name}</h2>
             <p>${perk1.description}</p>
           </div>
       </div>
-      <div id="perk2" class="random-perk">
+      <div id="perk2" class="random-kperk">
         <img src="${perk2.icon}"></img>
         <div>
           <h2>${perk2.perk_name}</h2>
           <p>${perk2.description}</p>
         </div>
       </div>
-      <div id="perk3" class="random-perk">
+      <div id="perk3" class="random-kperk">
         <img src="${perk3.icon}"></img>
         <div>
           <h2>${perk3.perk_name}</h2>
           <p>${perk3.description}</p>
         </div>
       </div>
-      <div id="perk4" class="random-perk">
+      <div id="perk4" class="random-kperk">
         <img src="${perk4.icon}"></img>
         <div>
           <h2>${perk4.perk_name}</h2>
@@ -110,33 +110,33 @@ const randomSurvivorPerks = () => {
       let perk4 = perks[randomIndex()];
       document.getElementById(
         "survivor-perks-wrapper"
-      ).innerHTML = `<div id="perk1" class="random-perk">
-      <img src="${perk1.icon}"></img>
+      ).innerHTML = `<div id="perk1" class="random-sperk">
       <div>
         <h2>${perk1.perk_name}</h2>
         <p>${perk1.description}</p>
       </div>
+      <img src="${perk1.icon}"></img>
   </div>
-  <div id="perk2" class="random-perk">
-    <img src="${perk2.icon}"></img>
+  <div id="perk2" class="random-sperk">
     <div>
       <h2>${perk2.perk_name}</h2>
       <p>${perk2.description}</p>
     </div>
+    <img src="${perk2.icon}"></img>
   </div>
-  <div id="perk3" class="random-perk">
-    <img src="${perk3.icon}"></img>
+  <div id="perk3" class="random-sperk">
     <div>
       <h2>${perk3.perk_name}</h2>
       <p>${perk3.description}</p>
     </div>
+    <img src="${perk3.icon}"></img>
   </div>
-  <div id="perk4" class="random-perk">
-    <img src="${perk4.icon}"></img>
+  <div id="perk4" class="random-sperk">
     <div>
       <h2>${perk4.perk_name}</h2>
       <p>${perk4.description}</p>
     </div>
+    <img src="${perk4.icon}"></img>
   </div>`;
     })
     .catch(catchErr);
