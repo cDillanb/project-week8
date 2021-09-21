@@ -48,6 +48,15 @@ app.get("/rsurvivorperks", (req, res) => {
     .catch(catchErr);
 });
 
+app.get("/rsurvivor", (req, res) => {
+  axios
+    .get("https://dbd-api.herokuapp.com/survivors")
+    .then((response) => {
+      res.status(200).send(response.data);
+    })
+    .catch(catchErr);
+});
+
 const port = process.env.PORT || 4000;
 
 app.listen(port, console.log(`Listening on port ${port}`));

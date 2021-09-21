@@ -2,10 +2,11 @@
 const killerPerkBtn = document.getElementById("rndm-killer-perks-button");
 const rndmKillerBtn = document.getElementById("rndm-killer-button");
 const survivorPerkBtn = document.getElementById("rndm-survivor-perks-button");
+const survivorBtn = document.getElementById("rndm-survivor-button");
 
 // URL
 // const baseUrl = "http://localhost:4000";
-const baseUrl = "https://project-week8.herokuapp.com"
+const baseUrl = "https://project-week8.herokuapp.com";
 
 // functions
 const catchErr = (err) => console.log(err);
@@ -16,6 +17,7 @@ const randomKillerPerks = () => {
     .get(`${baseUrl}/rkillerperks`)
     .then((res) => {
       const perks = res.data;
+      // This makes sure you can't get 2 of the same perk
       const randomIndex = () => {
         let randomNum = Math.floor(Math.random() * perks.length);
         for (let i = 0; i < 100; i++) {
@@ -141,7 +143,29 @@ const randomSurvivorPerks = () => {
     .catch(catchErr);
 };
 
+const randomSurvivor = () => {
+  axios
+    .get(`${baseUrl}/rsurvivor`)
+    .then((res) => {
+      const data = res.data;
+      let randomIndex = Math.floor(Math.random() * data.length);
+      let randomSurvivor = data[randomIndex];
+      document.getElementById(
+        "survivor-wrapper"
+      ).innerHTML = `<div id="random-survivor">
+        <img src="${randomSurvivor.icon.shop_background}" id="survivor-img"></img>
+        <div>
+            <h2>${randomSurvivor.name}</h2>
+            <br>
+            <p>${randomSurvivor.overview}</p>
+        </div>
+      </div>`;
+    })
+    .catch(catchErr);
+};
+
 // Listeners
 killerPerkBtn.addEventListener("click", randomKillerPerks);
 rndmKillerBtn.addEventListener("click", randomKiller);
 survivorPerkBtn.addEventListener("click", randomSurvivorPerks);
+survivorBtn.addEventListener("click", randomSurvivor);
