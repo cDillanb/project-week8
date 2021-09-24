@@ -6,7 +6,7 @@ const survivorBtn = document.getElementById("rndm-survivor-button");
 const bugForm = document.getElementById("bug-form");
 
 // URL
-const baseUrl = "https://project-week8.herokuapp.com";
+const baseUrl = "https://proje/ct-week8.herokuapp.com";
 
 // functions
 const catchErr = (err) => console.log(err);
@@ -24,7 +24,7 @@ const randomKillerPerks = () => {
             perkNums.push(randomNum);
             return randomNum;
           } else {
-            randomNum++;
+            randomNum = Math.floor(Math.random() * perks.length);
           }
         }
       };
